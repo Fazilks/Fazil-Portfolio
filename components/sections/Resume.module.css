@@ -1,0 +1,183 @@
+.resume { overflow: hidden; }
+
+.orb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.07) 0%, transparent 70%);
+  filter: blur(80px);
+  right: -200px;
+  top: 0;
+  pointer-events: none;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  max-width: 600px;
+}
+
+/* Preview Card */
+.previewCard {
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  padding: 0;
+}
+
+/* Mock CV design */
+.cvMock {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  filter: blur(2px);
+  opacity: 0.4;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cvHeader {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cvAvatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  flex-shrink: 0;
+}
+
+.cvLines {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.cvBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.cvSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cvLine {
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.12);
+}
+
+.cvLineLg { width: 100%; }
+.cvLineMd { width: 75%; }
+.cvLineSm { width: 45%; }
+.cvLineAccent { background: rgba(239, 68, 68, 0.3); width: 60%; }
+
+.cvSkillRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cvSkillChip {
+  padding: 4px 10px;
+  background: rgba(239, 68, 68, 0.15);
+  border-radius: 50px;
+  font-size: 0.75rem;
+  color: var(--accent-violet-light);
+}
+
+/* Overlay */
+.previewOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(9, 9, 11, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.overlayIcon {
+  color: var(--accent-violet-light);
+  opacity: 0.7;
+}
+
+.overlayText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.overlayActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+/* Stats strip */
+.strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 32px; /* Add extra spacing below the download/preview section */
+}
+
+.stripItem {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.stripValue {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stripLabel {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .strip { grid-template-columns: repeat(2, 1fr); }
+  .cvBody { grid-template-columns: 1fr; }
+}
